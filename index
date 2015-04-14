@@ -1,0 +1,99 @@
+<html>
+   <head>
+      <title>Display Records</title>
+   </head>
+   <body>
+      <?php
+//include database connection
+
+include 'db.php';
+
+//query 10 records from the database         
+$query = "SELECT * FROM users WHERE isactive=1 LIMIT 0,10";
+
+//this is to execute the query
+
+$result = $mysqli->query($query);
+
+//this is to get the number of rows returned
+
+$num_results = $result->num_rows;
+
+//this will link us to our add.php to create new record
+
+echo "<div><a href='add.php'>Add New Record</a></div>";
+
+if ($num_results > 0) { //this means that there is already a database record
+    
+    echo "<table border='1'>"; // this is to start the table
+    
+    //creating our table heading         
+    echo "<tr>";
+    echo "<th>Username</th>";
+    echo "<th>Status</th>";
+    echo "<th>Password</th>";
+    echo "<th>Action</th>";
+    echo "</tr>";
+    
+    //loop to show each records
+    
+    while ($row = $result->fetch_assoc()) {
+        
+        //extract row         
+        //this will make $row['firstname'] to         
+        //just $firstname only
+        
+        extract($row);
+        
+        //creating new table row per record         
+        echo "<tr>";
+        echo "<td>{$username}</td>";
+        if ($isactive) {
+            echo "<td>Active</td>";
+        } else {
+            echo "<td>Not Active</td>";
+        }
+        ;
+        echo "<td>{$password}</td>";
+        echo "<td>";
+        
+        //this is just preparing the edit link so as to edit the record         
+        echo "<a href='edit.php?id={$id}'>Update</a>";
+        echo " / ";
+        
+        //just preparing the delete link to delete the record         
+        echo "<a href='#' onclick='delete_user( {$id} );'>Delete</a>";
+        echo "</td>";
+        echo "</tr>";
+    }
+    
+    echo "</table>"; //this is to end table
+    
+} else {
+    
+    //this is if database table is empty         
+    echo "No records found.";
+    
+}
+
+//this is to disconnect from database
+
+$result->free();
+$mysqli->close();
+?>
+          <script type='text/javascript'>
+         function delete_user( id ){         
+         //prompt the user         
+         var answer = confirm('Are you sure?');
+         
+         if ( answer ){ //if user clicked ok         
+         //redirect to url with action as delete and id of the record to be deleted         
+         window.location = 'delete.php?action=delete&id=' + id;
+         
+         }
+         
+         }
+         
+      </script>
+   </body>
+</html>
