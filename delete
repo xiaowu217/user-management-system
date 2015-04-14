@@ -4,23 +4,28 @@
    </head>
    <body>
       <?php
-//include database connection
+//this is to include database connection
 include 'db.php';
 $action = isset($_GET['action']) ? $_GET['action'] : "";
+
 if ($action == 'delete') { //if the user clicked ok, run our delete query
+    
     //$mysqli->real_escape_string() function helps us prevent attacks such as SQL injection
     $query = "DELETE FROM users WHERE id = " . $mysqli->real_escape_string($_GET['id']) . "";
+    
     //execute query
     if ($mysqli->query($query)) {
+        
         //if successful deletion
         echo "User was deleted.";
+        
     } else {
         //this is for if there's a database problem
         echo "Database Error: Unable to delete record.";
     }
 }
 ?>
-    <br/>
+     <br/>
       <a href='index.php'>Back to display page</a>
    </body>
 </html>
