@@ -18,6 +18,7 @@ if ($action == 'delete') { //if the user clicked ok, run our delete query
         
         //if successful deletion
         echo "User was deleted.";
+		header("Location:index.php");
         
     } else {
         //this is for if there's a database problem
