@@ -9,7 +9,7 @@
 include 'db.php';
 
 //query 10 records from the database         
-$query = "SELECT * FROM users WHERE isactive=1 LIMIT 0,10";
+$query = "SELECT * FROM users LIMIT 0,10";
 
 //this is to execute the query
 
