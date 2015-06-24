@@ -67,7 +67,21 @@ if ($num_results > 0) { //this means that there is already a database record
         echo "</tr>";
     }
     
-    echo "</table>"; //this is to end table
+   echo "<tr>";
+	echo "<td><input type='text' name='Username'/></td>";
+	echo "<td><select><option value='active'>Active</option>
+		<option value='notactive'>Not Active</option></select></td>";
+	
+	echo "<td><input type='text' name='Password' /></td>";
+	echo "<td>";
+	
+	//this is just preparing the edit link so as to edit the record         
+	echo "<a href='add.php'>Add New Record</a>";
+	
+	echo "</td>";
+	echo "</tr>";
+	
+   echo "</table>"; //this is to end table
     
 } else {
     
