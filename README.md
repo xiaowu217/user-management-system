@@ -12,7 +12,7 @@ To install this solution, please follow these steps.
 
 4.  Open a browser and go to the URL `http://localhost`. In XAMPP homepage, go to `phpMyAdmin`.
 
-5.  Create a new database named `user management system`, and then import file `users.sql` from the solution folder.
+5.  Create a new database named `user management system`, select `utf8_unicode_ci` for Collation and then import file `users.sql` from the solution folder.
 
 6.  Open another tab in browser and go to the URL `http://localhost/user-management-system-master/`. You will see the solution page.
 
