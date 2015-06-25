@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Display Records</title>
+<title>User Management Problem</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
