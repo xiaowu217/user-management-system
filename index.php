@@ -125,12 +125,12 @@
 						<!--call update_user function on click-->         
 						<a href='#' onclick='update_user( {$id} );'>
 							<button type='button' class='btn btn-info btn-sm' data-toggle='modal' 
-							data-target='#myModal' style=\"width: 100%;\">Update</button>
+							data-target='#myModal' style=\"width: 50%;\">Update</button>
 						</a>
 						<!--call delete_user function on click-->      
 						<a href='#' onclick='delete_user( {$id} );'>
 							<button type='button' class='btn btn-danger btn-sm' 
-							style=\"width: 100%;\">Delete</button>
+							style=\"width: 50%;\">Delete</button>
 						</a>
 					</td>
 				</tr>";
