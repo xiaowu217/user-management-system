@@ -1,14 +1,9 @@
-<html>
-   <head>
-      <title>Delete Record</title>
-   </head>
-   <body>
-      <?php
-//this is to include database connection
+<?php
+//include database connection
 include 'db.php';
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 
-if ($action == 'delete') { //if the user clicked ok, run our delete query
+if ($action == 'delete') { //if the user clicked ok, run delete query
     
     //$mysqli->real_escape_string() function helps us prevent attacks such as SQL injection
     $query = "DELETE FROM users WHERE id = " . $mysqli->real_escape_string($_GET['id']) . "";
@@ -17,16 +12,12 @@ if ($action == 'delete') { //if the user clicked ok, run our delete query
     if ($mysqli->query($query)) {
         
         //if successful deletion
-        echo "User was deleted.";
+        //redirect to index.php 
 		header("Location:index.php");
         
     } else {
-        //this is for if there's a database problem
+        //if there's a database problem
         echo "Database Error: Unable to delete record.";
     }
 }
 ?>
-     <br/>
-      <a href='index.php'>Back to display page</a>
-   </body>
-</html>
