@@ -125,12 +125,12 @@
 						<!--call update_user function on click-->         
 						<a href='#' onclick='update_user( {$id} );'>
 							<button type='button' class='btn btn-info btn-sm' data-toggle='modal' 
-							data-target='#myModal' style=\"width: 50%;\">Update</button>
+							data-target='#myModal' style=\"width: 45%;\">Update</button>
 						</a>
 						<!--call delete_user function on click-->      
 						<a href='#' onclick='delete_user( {$id} );'>
 							<button type='button' class='btn btn-danger btn-sm' 
-							style=\"width: 50%;\">Delete</button>
+							style=\"width: 45%;\">Delete</button>
 						</a>
 					</td>
 				</tr>";
@@ -138,14 +138,16 @@
 			echo "
 				<tr>
 				<!--use a form for last row to add new record-->
-					<form role='form' id='AddUser' action='index.php' onsubmit='return validateForm(\"AddUser\")' method='post'>
+					<form role='form' id='AddUser' action='index.php' 
+					onsubmit='return validateForm(\"AddUser\")' method='post'>
 						<td>
 						<td><input type='text' name='AddUsername' style=\"width: 60%;\"/></td>
 						<td><select name='AddIsactive' style=\"width: 80%;\">
 							<option value='1'>Active</option>
 							<option value='0'>Not Active</option></select></td>
 						<td><input type='text' name='AddPassword' style=\"width: 60%;\"/></td>
-						<td><input type='submit' class='btn btn-success btn-sm' value='Create User' style=\"width: 100%;\"></td>
+						<td><input type='submit' class='btn btn-success btn-sm' value='Create User' 
+						style=\"width: 93%;\"></td>
 					</form>
 				
 				</tr>
