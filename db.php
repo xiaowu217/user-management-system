@@ -5,15 +5,16 @@
 $host     = "localhost";
 $username = "root";
 $password = "";
-$db_name  = "usermanagement"; //this is for the database name.
+$db_name  = "user management system"; //this is for the database name.
 
-//this is to connect to mysql server
+//connect to mysql server
 $mysqli = new mysqli($host, $username, $password, $db_name);
 
-//this is to check if any connection error was encountered
+//check if any connection error was encountered
 if (mysqli_connect_errno()) {
     echo "Error: Could not connect to database.";
     exit;
 }
 
 ?>   
+
