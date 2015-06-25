@@ -1,4 +1,4 @@
-# user-management-system
+# User-Management-System
 
 This is for the user management system.
 
