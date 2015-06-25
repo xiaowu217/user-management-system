@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 13, 2015 at 07:56 AM
--- Server version: 5.1.36
--- PHP Version: 5.3.1
+-- Host: 127.0.0.1
+-- Generation Time: Jun 23, 2015 at 08:12 PM
+-- Server version: 5.6.11
+-- PHP Version: 5.5.1
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,7 +17,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `usermanagement`
+-- Database: `user management system`
 --
 
 -- --------------------------------------------------------
@@ -27,7 +28,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(32) NOT NULL,
+  `username` varchar(32) NOT NULL UNIQUE,
   `password` varchar(32) NOT NULL,
   `isactive` int(1) NOT NULL DEFAULT '0',
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -39,6 +40,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `isactive`, `modified`) VALUES
-(1, 'User1', 'password1', 1, '2015-04-14 10:55:03'),
-(2, 'User2', 'password2', 0, '2015-04-14 10:55:14'),
-(3, 'User3', 'password3', 1, '2015-04-14 10:55:23');
+(1, 'User1', 'password1', 1, '2015-06-23 20:12:09'),
+(2, 'User2', 'password2', 0, '2015-06-23 20:12:21'),
+(3, 'User3', 'password3', 1, '2015-06-23 20:12:33');
